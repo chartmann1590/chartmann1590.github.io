@@ -3,16 +3,293 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>chartmann1590</title>
+  <title>Charles Hartmann — Open Source Developer</title>
+  <meta name="description" content="Android developer, AI tinkerer, and open-source builder. Creator of Knightfall chess and other apps.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8382831211800454"
        crossorigin="anonymous"></script>
-  <meta http-equiv="refresh" content="0; url=/knightfall/">
   <style>
-    body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #1a1a2e; color: #fff; }
-    a { color: #e2b96a; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0d1117;
+      --surface: #161b22;
+      --border:  #30363d;
+      --text:    #c9d1d9;
+      --muted:   #8b949e;
+      --gold:    #e8b54a;
+      --link:    #58a6ff;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    .page { max-width: 760px; margin: 0 auto; padding: 0 24px; width: 100%; }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+    .header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { font-weight: 700; font-size: 1rem; color: var(--text); }
+    .header-links { display: flex; gap: 20px; font-size: 0.875rem; color: var(--muted); }
+    .header-links a { color: var(--muted); }
+    .header-links a:hover { color: var(--text); text-decoration: none; }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 72px 0 56px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold) 0%, #b8862e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #f0f6fc;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .hero-title {
+      font-size: 1rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 540px;
+      margin-bottom: 32px;
+    }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: opacity 0.15s;
+      text-decoration: none !important;
+    }
+    .btn:hover { opacity: 0.85; text-decoration: none; }
+    .btn-primary { background: var(--gold); color: #0d1117; }
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--muted); }
+
+    /* ── Section ── */
+    .section { padding: 48px 0; border-bottom: 1px solid var(--border); }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    /* ── Project cards ── */
+    .projects { display: flex; flex-direction: column; gap: 16px; }
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      transition: border-color 0.15s;
+    }
+    .project-card:hover { border-color: rgba(232,181,74,0.5); }
+    .project-icon { font-size: 2rem; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+    .project-body { flex: 1; min-width: 0; }
+    .project-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #f0f6fc;
+      margin-bottom: 4px;
+    }
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .project-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag {
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: rgba(88,166,255,0.1);
+      color: var(--link);
+      border: 1px solid rgba(88,166,255,0.2);
+    }
+    .tag.gold {
+      background: rgba(232,181,74,0.1);
+      color: var(--gold);
+      border-color: rgba(232,181,74,0.25);
+    }
+    .project-links { margin-top: 14px; display: flex; gap: 16px; font-size: 0.85rem; }
+    .project-links a { color: var(--link); }
+
+    /* ── Links grid ── */
+    .links-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+    .link-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      transition: border-color 0.15s;
+      text-decoration: none !important;
+      display: block;
+    }
+    .link-card:hover { border-color: var(--link); text-decoration: none; }
+    .link-icon { font-size: 1.5rem; margin-bottom: 8px; }
+    .link-label { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+    .link-sub { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: auto;
+      padding: 24px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.7rem; }
+      .hero-btns { flex-direction: column; }
+      .btn { justify-content: center; }
+      .header-links { gap: 12px; }
+    }
   </style>
 </head>
 <body>
-  <p>Redirecting to <a href="/knightfall/">Knightfall</a>…</p>
+
+  <header>
+    <div class="header-inner">
+      <span class="logo">chartmann1590</span>
+      <nav class="header-links">
+        <a href="https://github.com/chartmann1590">GitHub</a>
+        <a href="https://chartmann1590.github.io/showcase">Showcase</a>
+        <a href="https://chartmann1590.github.io/knightfall">Knightfall</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <section class="hero">
+      <div class="hero-avatar">⚡</div>
+      <p class="hero-title">Open Source Developer</p>
+      <h1>Charles Hartmann</h1>
+      <p>I build Android apps, AI-powered tools, and automation platforms.
+         Everything I ship is open source and free to use.</p>
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="https://chartmann1590.github.io/showcase">View all projects</a>
+        <a class="btn btn-outline" href="https://github.com/chartmann1590">GitHub profile</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-label">Featured project</p>
+      <div class="projects">
+        <div class="project-card">
+          <div class="project-icon">♞</div>
+          <div class="project-body">
+            <div class="project-name">Knightfall</div>
+            <div class="project-desc">
+              A free, beautiful chess app for Android. Play against a full-strength Stockfish 18 AI
+              with an on-device Gemma coach, challenge friends online with invite codes, solve tactical
+              puzzles, and climb the global leaderboard.
+            </div>
+            <div class="project-tags">
+              <span class="tag gold">Android</span>
+              <span class="tag">Kotlin</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">Stockfish</span>
+              <span class="tag">Gemma AI</span>
+            </div>
+            <div class="project-links">
+              <a href="https://chartmann1590.github.io/knightfall">Website</a>
+              <a href="https://github.com/chartmann1590/knightfall">Source</a>
+              <a href="https://chartmann1590.github.io/knightfall/play.html">Play online</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-label">Find me</p>
+      <div class="links-grid">
+        <a class="link-card" href="https://chartmann1590.github.io/showcase">
+          <div class="link-icon">⚡</div>
+          <div class="link-label">Showcase</div>
+          <div class="link-sub">All projects</div>
+        </a>
+        <a class="link-card" href="https://github.com/chartmann1590">
+          <div class="link-icon">🐙</div>
+          <div class="link-label">GitHub</div>
+          <div class="link-sub">chartmann1590</div>
+        </a>
+        <a class="link-card" href="https://play.google.com/store/apps/developer?id=Hartmann+Studios">
+          <div class="link-icon">📱</div>
+          <div class="link-label">Play Store</div>
+          <div class="link-sub">Hartmann Studios</div>
+        </a>
+        <a class="link-card" href="https://buymeacoffee.com/charleshartmann">
+          <div class="link-icon">☕</div>
+          <div class="link-label">Buy me a coffee</div>
+          <div class="link-sub">Support open source</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Charles Hartmann · <a href="https://chartmann1590.github.io/knightfall/privacy.html">Privacy Policy</a></p>
+  </footer>
+
 </body>
 </html>
