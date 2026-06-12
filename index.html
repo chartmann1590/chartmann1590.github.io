@@ -3,8 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
   <title>Charles Hartmann — Open Source Developer</title>
-  <meta name="description" content="Android developer, AI tinkerer, and open-source builder. Creator of Knightfall chess and other apps.">
+  <meta name="description" content="Android developer, AI tinkerer, and open-source builder. Creator of Knightfall chess and other free, open-source apps.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://chartmann1590.github.io/">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://chartmann1590.github.io/">
+  <meta property="og:title"       content="Charles Hartmann — Open Source Developer">
+  <meta property="og:description" content="Android developer, AI tinkerer, and open-source builder. Creator of Knightfall chess and other free, open-source apps.">
+  <meta property="og:image"       content="https://chartmann1590.github.io/logo.png">
+  <meta property="og:image:alt"   content="Charles Hartmann logo">
+  <meta property="og:site_name"   content="Charles Hartmann">
+  <meta property="og:locale"      content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Charles Hartmann — Open Source Developer">
+  <meta name="twitter:description" content="Android developer, AI tinkerer, and open-source builder. Creator of Knightfall chess and other free, open-source apps.">
+  <meta name="twitter:image"       content="https://chartmann1590.github.io/logo.png">
+
+  <!-- JSON-LD structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Charles Hartmann",
+    "url": "https://chartmann1590.github.io/",
+    "image": "https://chartmann1590.github.io/logo.png",
+    "jobTitle": "Open Source Developer",
+    "description": "Android developer, AI tinkerer, and open-source builder.",
+    "sameAs": [
+      "https://github.com/chartmann1590",
+      "https://play.google.com/store/apps/developer?id=Hartmann+Studios",
+      "https://buymeacoffee.com/charleshartmann"
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8382831211800454"
@@ -208,10 +247,9 @@
   <header>
     <div class="header-inner">
       <span class="logo">chartmann1590</span>
-      <nav class="header-links">
+      <nav class="header-links" aria-label="Site navigation">
         <a href="https://github.com/chartmann1590">GitHub</a>
         <a href="https://chartmann1590.github.io/showcase">Showcase</a>
-        <a href="https://chartmann1590.github.io/knightfall">Knightfall</a>
       </nav>
     </div>
   </header>
@@ -219,7 +257,7 @@
   <main class="page">
 
     <section class="hero">
-      <div class="hero-avatar">⚡</div>
+      <div class="hero-avatar" aria-hidden="true">⚡</div>
       <p class="hero-title">Open Source Developer</p>
       <h1>Charles Hartmann</h1>
       <p>I build Android apps, AI-powered tools, and automation platforms.
@@ -233,29 +271,22 @@
     <section class="section">
       <p class="section-label">Featured project</p>
       <div class="projects">
+        <!-- FEATURED_START -->
         <div class="project-card">
-          <div class="project-icon">♞</div>
+          <div class="project-icon">📱</div>
           <div class="project-body">
-            <div class="project-name">Knightfall</div>
-            <div class="project-desc">
-              A free, beautiful chess app for Android. Play against a full-strength Stockfish 18 AI
-              with an on-device Gemma coach, challenge friends online with invite codes, solve tactical
-              puzzles, and climb the global leaderboard.
-            </div>
+            <div class="project-name">Path</div>
+            <div class="project-desc">A bible study app for android with (self hosted) AI summaries</div>
             <div class="project-tags">
-              <span class="tag gold">Android</span>
-              <span class="tag">Kotlin</span>
-              <span class="tag">Firebase</span>
-              <span class="tag">Stockfish</span>
-              <span class="tag">Gemma AI</span>
+              <span class="tag  gold">Kotlin</span>
             </div>
             <div class="project-links">
-              <a href="https://chartmann1590.github.io/knightfall">Website</a>
-              <a href="https://github.com/chartmann1590/knightfall">Source</a>
-              <a href="https://chartmann1590.github.io/knightfall/play.html">Play online</a>
+              <a href="https://path-bible-study.web.app/">Website</a>
+              <a href="https://github.com/chartmann1590/path">Source</a>
             </div>
           </div>
         </div>
+        <!-- FEATURED_END -->
       </div>
     </section>
 
@@ -263,22 +294,22 @@
       <p class="section-label">Find me</p>
       <div class="links-grid">
         <a class="link-card" href="https://chartmann1590.github.io/showcase">
-          <div class="link-icon">⚡</div>
+          <div class="link-icon" aria-hidden="true">⚡</div>
           <div class="link-label">Showcase</div>
           <div class="link-sub">All projects</div>
         </a>
         <a class="link-card" href="https://github.com/chartmann1590">
-          <div class="link-icon">🐙</div>
+          <div class="link-icon" aria-hidden="true">🐙</div>
           <div class="link-label">GitHub</div>
           <div class="link-sub">chartmann1590</div>
         </a>
         <a class="link-card" href="https://play.google.com/store/apps/developer?id=Hartmann+Studios">
-          <div class="link-icon">📱</div>
+          <div class="link-icon" aria-hidden="true">📱</div>
           <div class="link-label">Play Store</div>
           <div class="link-sub">Hartmann Studios</div>
         </a>
         <a class="link-card" href="https://buymeacoffee.com/charleshartmann">
-          <div class="link-icon">☕</div>
+          <div class="link-icon" aria-hidden="true">☕</div>
           <div class="link-label">Buy me a coffee</div>
           <div class="link-sub">Support open source</div>
         </a>
