@@ -30,16 +30,17 @@ from google.auth.transport.requests import Request
 from google.analytics.admin import AnalyticsAdminServiceClient
 from google.analytics.admin_v1alpha.types import DataStream, Property
 
-# ─── OAuth client (firebase-tools public open-source credentials) ─────────────
-_CLIENT_CONFIG = {
-    "installed": {
-        "client_id": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
-        "client_secret": "j9iVZfS8kkCEFUPaAeJV0sAi",
-        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-        "token_uri": "https://oauth2.googleapis.com/token",
-        "redirect_uris": ["http://localhost"],
-    }
-}
+# ─── OAuth client — load from scripts/client_secrets.json (gitignored) ───────
+#  Create that file from Google Cloud Console: APIs & Services → Credentials
+#  → Create OAuth client ID → Desktop app → Download JSON → save as client_secrets.json
+_CLIENT_SECRETS_FILE = Path(__file__).parent / "client_secrets.json"
+if not _CLIENT_SECRETS_FILE.exists():
+    sys.exit(
+        f"Missing {_CLIENT_SECRETS_FILE}\n"
+        "Download a Desktop OAuth client from Google Cloud Console and save it there."
+    )
+with open(_CLIENT_SECRETS_FILE) as _f:
+    _CLIENT_CONFIG = json.load(_f)
 GA_SCOPES = ["https://www.googleapis.com/auth/analytics.edit"]
 
 # ─── Paths ────────────────────────────────────────────────────────────────────
