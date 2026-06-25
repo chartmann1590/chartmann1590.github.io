@@ -1,0 +1,4 @@
+# OAuth credentials — never commit
+scripts/client_secrets.json
+scripts/.ga_token.json
+scripts/ga_config.json
