@@ -129,7 +129,10 @@ def get_credentials() -> Credentials:
                 login_hint="charles.h.hartmann1@gmail.com",
                 prompt="consent",
             )
-        TOKEN_FILE.write_text(creds.to_json())
+        token_json = creds.to_json()
+        fd = os.open(str(TOKEN_FILE), os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+        with os.fdopen(fd, "w") as f:
+            f.write(token_json)
         print("Auth token saved.\n")
     return creds
 
