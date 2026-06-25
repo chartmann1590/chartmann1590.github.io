@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Primary SEO -->
-  <title>Charles Hartmann — Open Source Developer</title>
-  <meta name="description" content="Android developer, AI tinkerer, and open-source builder. Creator of Knightfall chess and other free, open-source apps.">
+  <title>Charles Hartmann — Open Source Android & AI Developer</title>
+  <meta name="description" content="Charles Hartmann is an Android developer, AI tinkerer, and open-source builder. Creator of Knightfall chess, Path Bible app, and other free, open-source apps published under Hartmann Studios.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://chartmann1590.github.io/">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://chartmann1590.github.io/">
-  <meta property="og:title"       content="Charles Hartmann — Open Source Developer">
-  <meta property="og:description" content="Android developer, AI tinkerer, and open-source builder. Creator of Knightfall chess and other free, open-source apps.">
+  <meta property="og:title"       content="Charles Hartmann — Open Source Android & AI Developer">
+  <meta property="og:description" content="Android developer, AI tinkerer, and open-source builder. Creator of Knightfall chess, Path Bible app, and other free open-source apps.">
   <meta property="og:image"       content="https://chartmann1590.github.io/logo.png">
   <meta property="og:image:alt"   content="Charles Hartmann logo">
   <meta property="og:site_name"   content="Charles Hartmann">
@@ -22,8 +22,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="Charles Hartmann — Open Source Developer">
-  <meta name="twitter:description" content="Android developer, AI tinkerer, and open-source builder. Creator of Knightfall chess and other free, open-source apps.">
+  <meta name="twitter:title"       content="Charles Hartmann — Open Source Android & AI Developer">
+  <meta name="twitter:description" content="Android developer, AI tinkerer, and open-source builder. Creator of Knightfall chess, Path Bible app, and other free open-source apps.">
   <meta name="twitter:image"       content="https://chartmann1590.github.io/logo.png">
 
   <!-- JSON-LD structured data -->
@@ -35,7 +35,7 @@
     "url": "https://chartmann1590.github.io/",
     "image": "https://chartmann1590.github.io/logo.png",
     "jobTitle": "Open Source Developer",
-    "description": "Android developer, AI tinkerer, and open-source builder.",
+    "description": "Android developer, AI tinkerer, and open-source builder. Creator of Knightfall chess and Path Bible study app.",
     "sameAs": [
       "https://github.com/chartmann1590",
       "https://play.google.com/store/apps/developer?id=Hartmann+Studios",
@@ -126,10 +126,10 @@
       font-size: 1.05rem;
       color: var(--muted);
       line-height: 1.7;
-      max-width: 540px;
-      margin-bottom: 32px;
+      max-width: 580px;
+      margin-bottom: 16px;
     }
-    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
     .btn {
       display: inline-flex;
       align-items: center;
@@ -160,6 +160,41 @@
       color: var(--muted);
       margin-bottom: 24px;
     }
+    .section h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #f0f6fc;
+      margin-bottom: 16px;
+    }
+    .prose {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 680px;
+    }
+    .prose + .prose { margin-top: 14px; }
+
+    /* ── What I Build grid ── */
+    .build-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .build-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .build-icon { font-size: 1.6rem; margin-bottom: 10px; }
+    .build-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #f0f6fc;
+      margin-bottom: 8px;
+    }
+    .build-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
 
     /* ── Project cards ── */
     .projects { display: flex; flex-direction: column; gap: 16px; }
@@ -185,7 +220,7 @@
     .project-desc {
       font-size: 0.9rem;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.7;
       margin-bottom: 12px;
     }
     .project-tags { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -204,6 +239,32 @@
     }
     .project-links { margin-top: 14px; display: flex; gap: 16px; font-size: 0.85rem; }
     .project-links a { color: var(--link); }
+
+    /* ── Skills list ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .skill-group h3 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .skill-list { list-style: none; }
+    .skill-list li {
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding: 3px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .skill-list li::before { content: "›"; color: var(--link); font-weight: 700; }
 
     /* ── Links grid ── */
     .links-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
@@ -239,6 +300,7 @@
       .hero-btns { flex-direction: column; }
       .btn { justify-content: center; }
       .header-links { gap: 12px; }
+      .build-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -256,18 +318,64 @@
 
   <main class="page">
 
+    <!-- Hero -->
     <section class="hero">
       <div class="hero-avatar" aria-hidden="true">⚡</div>
       <p class="hero-title">Open Source Developer</p>
       <h1>Charles Hartmann</h1>
-      <p>I build Android apps, AI-powered tools, and automation platforms.
-         Everything I ship is open source and free to use.</p>
+      <p>I build Android apps, AI-powered tools, and automation platforms — all free, open-source, and published for anyone to use, study, or improve.</p>
+      <p>My work lives under <strong style="color: var(--text);">Hartmann Studios</strong> on the Google Play Store. Whether it is a chess game, a Bible study companion, or a developer utility, every project I ship is designed to be genuinely useful and completely transparent about how it works.</p>
       <div class="hero-btns">
         <a class="btn btn-primary" href="https://chartmann1590.github.io/showcase">View all projects</a>
         <a class="btn btn-outline" href="https://github.com/chartmann1590">GitHub profile</a>
       </div>
     </section>
 
+    <!-- About -->
+    <section class="section">
+      <p class="section-label">About me</p>
+      <h2>Who I am</h2>
+      <p class="prose">
+        I am a self-taught developer with a focus on Android, AI integration, and open-source software. I got into programming because I wanted to build things that I actually wanted to use — apps that respect user privacy, run well on modest hardware, and do not hide behind paywalls or subscriptions.
+      </p>
+      <p class="prose">
+        Over the years I have shipped several Android applications, built automation scripts to streamline repetitive workflows, and experimented with self-hosted AI models to add intelligent features without sending user data to third-party cloud services. I enjoy the constraint of working with self-hosted models: it forces you to think carefully about latency, prompt design, and what AI can realistically do well.
+      </p>
+      <p class="prose">
+        When I am not coding, I am usually reading, playing chess, or looking for new problems worth solving. I believe the best software comes from developers who are also genuine users of what they build.
+      </p>
+    </section>
+
+    <!-- What I Build -->
+    <section class="section">
+      <p class="section-label">What I build</p>
+      <h2>Areas of focus</h2>
+      <p class="prose">My projects fall into a few categories. Each one reflects a genuine interest — I build what I want to exist, then open-source it so others can benefit or contribute.</p>
+      <div class="build-grid">
+        <div class="build-card">
+          <div class="build-icon">📱</div>
+          <div class="build-title">Android Apps</div>
+          <div class="build-desc">Native Kotlin apps for Android that prioritize speed, clarity, and a clean user experience without unnecessary permissions or tracking.</div>
+        </div>
+        <div class="build-card">
+          <div class="build-icon">🤖</div>
+          <div class="build-title">AI Integration</div>
+          <div class="build-desc">Applications that use self-hosted AI models for intelligent features — summaries, search, and suggestions — while keeping user data private and local.</div>
+        </div>
+        <div class="build-card">
+          <div class="build-icon">⚙️</div>
+          <div class="build-title">Automation</div>
+          <div class="build-desc">Python scripts and GitHub Actions workflows that automate repetitive tasks: content rotation, deployment, data fetching, and more.</div>
+        </div>
+        <div class="build-card">
+          <div class="build-icon">🔓</div>
+          <div class="build-title">Open Source</div>
+          <div class="build-desc">Everything I build is published on GitHub under open licenses. Other developers are welcome to study the code, fork it, or contribute improvements.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Project (rotated daily by GitHub Actions) -->
     <section class="section">
       <p class="section-label">Featured project</p>
       <div class="projects">
@@ -289,6 +397,108 @@
       </div>
     </section>
 
+    <!-- Projects -->
+    <section class="section">
+      <p class="section-label">Projects</p>
+      <h2>Apps I have shipped</h2>
+      <p class="prose" style="margin-bottom: 24px;">The following projects are available on GitHub and, where applicable, on the Google Play Store. Each one is free to download and open source.</p>
+      <div class="projects">
+
+        <div class="project-card">
+          <div class="project-icon">♟️</div>
+          <div class="project-body">
+            <div class="project-name">Knightfall</div>
+            <div class="project-desc">
+              Knightfall is a fully-featured chess application for Android. It offers standard chess gameplay with a clean, responsive board interface built in Kotlin. The app is designed for players of all skill levels — whether you want a casual game or a more serious match. Because it is open source, players who are curious about how the move validation or game logic works can read every line of code on GitHub.
+            </div>
+            <div class="project-tags">
+              <span class="tag gold">Kotlin</span>
+              <span class="tag">Android</span>
+              <span class="tag">Chess</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/chartmann1590">Source</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon">📖</div>
+          <div class="project-body">
+            <div class="project-name">Path — Bible Study</div>
+            <div class="project-desc">
+              Path is an Android app that combines traditional Bible reading with AI-powered study tools. It lets users read, search, and navigate Scripture, then uses a self-hosted AI model to generate passage summaries and study notes on demand. Because the AI runs on a server the user controls, none of the reading history or study data leaves the user's own infrastructure. Path is built with Kotlin for Android and connects to a lightweight backend designed to be easy to self-host.
+            </div>
+            <div class="project-tags">
+              <span class="tag gold">Kotlin</span>
+              <span class="tag">Android</span>
+              <span class="tag">AI</span>
+              <span class="tag">Self-hosted</span>
+            </div>
+            <div class="project-links">
+              <a href="https://path-bible-study.web.app/">Website</a>
+              <a href="https://github.com/chartmann1590/path">Source</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section">
+      <p class="section-label">Skills &amp; technologies</p>
+      <h2>What I work with</h2>
+      <p class="prose">I work primarily in the Android and Python ecosystems, with experience in web tooling and CI/CD automation. My preference is for straightforward technology that is easy to understand and maintain over time.</p>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <ul class="skill-list">
+            <li>Kotlin</li>
+            <li>Java</li>
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>HTML &amp; CSS</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Platforms</h3>
+          <ul class="skill-list">
+            <li>Android SDK</li>
+            <li>Firebase</li>
+            <li>GitHub Actions</li>
+            <li>Google Play</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Interests</h3>
+          <ul class="skill-list">
+            <li>Self-hosted AI</li>
+            <li>LLM prompt design</li>
+            <li>REST API design</li>
+            <li>Automation scripts</li>
+            <li>Open source licensing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Open Source Philosophy -->
+    <section class="section">
+      <p class="section-label">Philosophy</p>
+      <h2>Why open source</h2>
+      <p class="prose">
+        Every project I publish is open source for a simple reason: I believe software you use should be software you can understand. When an application is closed-source, you have to trust the developer blindly. When the code is public, you can verify what it actually does — how it stores data, what it sends over the network, and whether it respects your privacy.
+      </p>
+      <p class="prose">
+        Open source also means that if I stop maintaining a project, someone else can pick it up. The work does not disappear when I move on. Other developers can learn from it, adapt it for their own needs, or contribute improvements that benefit everyone.
+      </p>
+      <p class="prose">
+        I keep all my apps free to download because I want them to be as accessible as possible. If you find my work useful and want to support continued development, you can buy me a coffee — but there is no pressure. The apps will remain free regardless.
+      </p>
+    </section>
+
+    <!-- Find me -->
     <section class="section">
       <p class="section-label">Find me</p>
       <div class="links-grid">
